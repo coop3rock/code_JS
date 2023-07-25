@@ -1,22 +1,15 @@
-// 3. Задача на розворот числа:
+'use strict'
 
-const currentMaxValue = 4589;
-let valueStr = currentMaxValue + ""
-let valueArray = valueStr.split("");
-let valueReverse = valueArray.reverse();
-let reverseStr = valueReverse.join("");
-let reverseMaxValue = +reverseStr;
-console.log(reverseMaxValue); 
-console.log(typeof reverseMaxValue); 
+// // 3. Задача про рекурсію 
+
+function recursiveOddSumTo(number) {
+   if(number==1) return number;
+   if(number%2!==0) return number + recursiveOddSumTo(number-1);
+      else
+      return recursiveOddSumTo(number-1);
+   
+}
+    console.log(recursiveOddSumTo(1)) // 1
+    console.log(recursiveOddSumTo(10)) // 25
 
 
-
-// Задача на знаходження добутку масиву чисел з невідомою глибиною вкладеності:
-
-const resultsArray = [1, 2, [3, [4]]];
-const array = resultsArray.flat(Infinity)
-const result = array.reduce(function(acc, item){
-    return acc * item;
-}, 1)
-let productOfArray=result;
-console.log(productOfArray); 
